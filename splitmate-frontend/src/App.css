@@ -26,7 +26,15 @@
     transform: rotate(360deg);
   }
 }
+@keyframes gradientMove {
+  0% { transform: translateX(-20%) translateY(-20%); }
+  50% { transform: translateX(20%) translateY(20%); }
+  100% { transform: translateX(-20%) translateY(-20%); }
+}
 
+.animate-gradient {
+  animation: gradientMove 10s ease-in-out infinite;
+}
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;

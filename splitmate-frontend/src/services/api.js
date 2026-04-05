@@ -1,18 +1,18 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:8080",
+  baseURL: "https://splitmatehost.onrender.com"
 });
 
-// 🔥 Always attach token
-API.interceptors.request.use((config) => {
+// 🔥 ADD THIS
+API.interceptors.request.use((req) => {
   const token = localStorage.getItem("token");
 
   if (token) {
-    config.headers.Authorization = "Bearer " + token;
+    req.headers.Authorization = `Bearer ${token}`;
   }
 
-  return config;
+  return req;
 });
 
 export default API;
